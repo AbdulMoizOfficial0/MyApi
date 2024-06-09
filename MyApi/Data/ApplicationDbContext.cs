@@ -48,6 +48,7 @@ namespace MyApi.Data
                 .HasMany(u => u.Reviews)
                 .WithOne(r => r.User)
                 .HasForeignKey(r => r.UserId);
+            modelBuilder.Entity<Product>().Property(d => d.Price).HasColumnType("decimal(18, 2)");
         }
 
     }
